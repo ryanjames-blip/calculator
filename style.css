@@ -15,8 +15,9 @@ body {
 
 .display {
     width: 100%;
-    height: 60px;
+    height: 72px;
     background-color: darkgray;
+    border: 1px solid black;
     align-self: center;
     border-radius: 6px;
     margin: 0 12px 12px;
@@ -39,6 +40,7 @@ body {
     font-size: 100%;
     border: none;
     margin: 4px;
+    border: 1px solid black;
 }
 
 .button:hover {
