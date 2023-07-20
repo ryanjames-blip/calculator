@@ -22,6 +22,8 @@ deleteButton.addEventListener('click', deleteLast);
 function displayNumber() {
     let text = this.innerHTML;
     displayWindow.textContent += text;
+    firstNumber = displayWindow.textContent;
+    console.log(firstNumber);
 }
 
 function clearDisplay() {
@@ -32,6 +34,8 @@ function deleteLast() {
     let currentDisplay = displayWindow.textContent;
     currentDisplay = currentDisplay.slice(0, currentDisplay.length - 1);
     displayWindow.textContent = currentDisplay;
+    firstNumber = currentDisplay;
+    console.log(firstNumber);
 }
 
 function add(first, second) {
