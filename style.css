@@ -20,6 +20,8 @@ body {
     align-self: center;
     border-radius: 6px;
     margin: 0 12px 12px;
+    text-align: right;
+    font-size: xx-large;
 }
 
 .button-row {
