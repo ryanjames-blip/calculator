@@ -10,7 +10,7 @@ body {
     padding: 12px;
     margin-top: 24px;
     border-radius: 6px;
-    box-shadow: 8px 8px 20px rgb(150, 145, 145);
+    box-shadow: 8px 8px 20px rgb(71, 69, 69);
     border: 1px solid black;
 }
 
@@ -24,6 +24,14 @@ body {
     margin: 0 12px 12px;
     text-align: right;
     font-size: xx-large;
+}
+
+#clear {
+    width: 126px;
+}
+
+#delete {
+    width: 126px;
 }
 
 .button-row {
