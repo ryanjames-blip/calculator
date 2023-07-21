@@ -10,7 +10,8 @@ body {
     padding: 12px;
     margin-top: 24px;
     border-radius: 6px;
-    box-shadow: 8px 8px 20px rgb(184, 179, 179);
+    box-shadow: 8px 8px 20px rgb(150, 145, 145);
+    border: 1px solid black;
 }
 
 .display {
