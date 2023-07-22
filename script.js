@@ -22,19 +22,36 @@ addButton.addEventListener('click', displayOperator);
 subtractButton.addEventListener('click', displayOperator);
 multiplyButton.addEventListener('click', displayOperator);
 divideButton.addEventListener('click', displayOperator);
+equalButton.addEventListener('click', () => operate(firstNumber, secondNumber, operator));
 
 numbers.forEach(number => number.addEventListener('click', displayNumber));
 
-addButton.addEventListener('click', add);
-subtractButton.addEventListener('click', subtract);
-multiplyButton.addEventListener('click', multiply);
-divideButton.addEventListener('click', divide);
+//addButton.addEventListener('click', add);
+//subtractButton.addEventListener('click', subtract);
+//multiplyButton.addEventListener('click', multiply);
+//divideButton.addEventListener('click', divide);
 
-function displayNumber() {
-    let text = this.innerHTML;
-    displayWindow.textContent += text;
-    firstNumber = displayWindow.textContent;
-    console.log(firstNumber);
+function displayNumber() {    
+    let displayLength = displayWindow.textContent.length;
+    if (operator != undefined) {
+        let text = this.innerHTML;
+        displayWindow.textContent += text;
+        if (secondNumber == undefined) {
+            secondNumber = displayWindow.textContent.slice(displayLength);
+        }
+        else {
+            secondNumber += displayWindow.textContent.slice(displayLength);
+            console.log(firstNumber, secondNumber, operator);
+        }
+        console.log(firstNumber);
+        console.log(secondNumber); 
+    }
+    else {
+        let text = this.innerHTML;
+        displayWindow.textContent += text;
+        firstNumber = displayWindow.textContent;
+        console.log(firstNumber);
+    }
 }
 
 function displayOperator() {
@@ -47,6 +64,8 @@ function displayOperator() {
 
 function clearDisplay() {
     displayWindow.textContent = '';
+    operator = undefined;
+    secondNumber = undefined;
 }
 
 function deleteLast() {
@@ -58,7 +77,7 @@ function deleteLast() {
 }
 
 function add(first, second) {
-    return first + second;
+    return parseInt(first) + parseInt(second);
 }
 
 function subtract(first, second) {
@@ -74,8 +93,25 @@ function divide(first, second) {
 }
 
 function operate(first, second, operation) {
-    if (operation == 'add') add(first, second);
-    else if (operation == 'subtract') subtract(first, second);
-    else if (operation == 'multiply') multiply(first, second);
-    else if (operation == 'divide') divide(first, second);
+    let answer;
+    console.log(first);
+    console.log(second);
+    console.log(operation);
+    if (operation == 'add') {
+        answer = add(first, second);
+        console.log(answer);
+    }
+    else if (operation == 'subtract') {
+        answer = subtract(first, second);
+        console.log(answer);
+    }
+    else if (operation == 'multiply') {
+        answer = multiply(first, second);
+        console.log(answer);
+    }
+    else if (operation == 'divide') {
+        answer = divide(first, second);
+        console.log(answer);
+    }
+    displayWindow.textContent = answer;
 }
