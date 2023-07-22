@@ -14,16 +14,35 @@ const multiplyButton = document.querySelector('#multiply');
 const divideButton = document.querySelector('#divide');
 const equalButton = document.querySelector('#equals');
 
-numbers.forEach(number => number.addEventListener('click', displayNumber));
-
 clearButton.addEventListener('click', clearDisplay);
 deleteButton.addEventListener('click', deleteLast);
+
+//add event listeners for each operator
+addButton.addEventListener('click', displayOperator);
+subtractButton.addEventListener('click', displayOperator);
+multiplyButton.addEventListener('click', displayOperator);
+divideButton.addEventListener('click', displayOperator);
+
+numbers.forEach(number => number.addEventListener('click', displayNumber));
+
+addButton.addEventListener('click', add);
+subtractButton.addEventListener('click', subtract);
+multiplyButton.addEventListener('click', multiply);
+divideButton.addEventListener('click', divide);
 
 function displayNumber() {
     let text = this.innerHTML;
     displayWindow.textContent += text;
     firstNumber = displayWindow.textContent;
     console.log(firstNumber);
+}
+
+function displayOperator() {
+    let operatorDisplay = this.innerHTML;
+    console.log(this.innerHTML);
+    displayWindow.textContent += ` ${operatorDisplay} `;
+    operator = this.id;
+    console.log(operator);
 }
 
 function clearDisplay() {
